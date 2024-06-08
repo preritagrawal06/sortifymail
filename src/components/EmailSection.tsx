@@ -50,7 +50,9 @@ const EmailSection = () => {
                 setLoading(true)
                 if (emails.length === 0 || emails.length != batch) {
                     setClassification(null)
-                    const { data } = await axios.post(`${process.env.PROD_BASE_URL}/api/gmail/messages`, {
+                    console.log(process.env);
+                    
+                    const { data } = await axios.post(`/api/gmail/messages`, {
                         batch: batch
                     })
                     // console.log(data);
@@ -73,7 +75,7 @@ const EmailSection = () => {
     const handleClick = async () => {
         try {
             setClassifierLoading(true)
-            const { data } = await axios.post(`${process.env.PROD_BASE_URL}/api/agent/classifyemail`, { emails: emails })
+            const { data } = await axios.post(`/api/agent/classifyemail`, { emails: emails })
             // console.log(data.data)
             setClassification(data.data)
             setClassifierLoading(false)

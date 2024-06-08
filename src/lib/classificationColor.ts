@@ -4,5 +4,6 @@ export const classificationColor = {
     "SPAM" : "text-red-500",
     "PROMOTION": "text-yellow-500",
     "GENERAL": "text-blue-500",
+    "SOCIAL":"text-purple-500",
     "null": "text-black"
 }
