@@ -72,7 +72,7 @@ const EmailSection = () => {
     const handleClick = async () => {
         try {
             setClassifierLoading(true)
-            const { data } = await axios.post("http://localhost:3000/api/agent/classifyemail", { emails: emails })
+            const { data } = await axios.post(`${process.env.BASE_URL}/api/agent/classifyemail`, { emails: emails })
             // console.log(data.data)
             setClassification(data.data)
             setClassifierLoading(false)

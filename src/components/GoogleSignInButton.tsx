@@ -8,7 +8,7 @@ interface GoogleSignInProvider {
 }
 
 const GoogleSignInButton : FC<GoogleSignInProvider> = ({children}) => {
-    const loginGoogle = ()=> signIn('google', {callbackUrl:"http://localhost:3000"})    
+    const loginGoogle = ()=> signIn('google', {callbackUrl:process.env.BASE_URL})    
     return ( 
         <Button onClick={loginGoogle} className="w-full">
             {children}
