@@ -43,13 +43,14 @@ const EmailSection = () => {
     const [batch, setBatch] = useState("10")
     const [classifierLoading, setClassifierLoading] = useState(false)
     const {toast} = useToast()
+    
     useEffect(() => {
         const fetchData = async () => {
             try {
                 setLoading(true)
                 if (emails.length === 0 || emails.length != batch) {
                     setClassification(null)
-                    const { data } = await axios.post(`http://localhost:3000/api/gmail/messages`, {
+                    const { data } = await axios.post(`${process.env.PROD_BASE_URL}/api/gmail/messages`, {
                         batch: batch
                     })
                     // console.log(data);
@@ -72,7 +73,7 @@ const EmailSection = () => {
     const handleClick = async () => {
         try {
             setClassifierLoading(true)
-            const { data } = await axios.post(`${process.env.BASE_URL}/api/agent/classifyemail`, { emails: emails })
+            const { data } = await axios.post(`${process.env.PROD_BASE_URL}/api/agent/classifyemail`, { emails: emails })
             // console.log(data.data)
             setClassification(data.data)
             setClassifierLoading(false)
