@@ -1,6 +1,6 @@
 {
     "functions": {
-        "app/api/agent/classifyemail/route.ts": {
+        "api/agent/classifyemail/route.ts": {
             "maxDuration": 30
         }
     }
