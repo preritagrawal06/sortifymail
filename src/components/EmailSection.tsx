@@ -74,7 +74,7 @@ const EmailSection = () => {
     const handleClick = async () => {
         try {
             setClassifierLoading(true)
-            const { data } = await axios.post(`/api/agent/classifyemail`, { emails: emails })
+            const { data } = await axios.post(`https://sortifymail-backend.onrender.com/api/agent/classifyemail`, { emails: emails })
             // console.log(data.data)
             setClassification(data.data)
             setClassifierLoading(false)
