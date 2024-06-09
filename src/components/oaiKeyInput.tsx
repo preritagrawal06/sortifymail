@@ -17,7 +17,7 @@ const OaiKeyInput = () => {
         } else{
             toast({
                 title: "Error",
-                description: "Please enter your OpenAI key",
+                description: "Please enter your Google genAI key",
                 variant: "destructive"
             })
         }
@@ -26,7 +26,7 @@ const OaiKeyInput = () => {
 
     return (
         <>
-            <Input placeholder="Your OpenAI key" value={key} required onChange={(e)=>setKey(e.target.value)}/>
+            <Input placeholder="Your Google genAI key" value={key} required onChange={(e)=>setKey(e.target.value)}/>
             <Button onClick={handleSubmit}>Submit</Button>
         </>
     );

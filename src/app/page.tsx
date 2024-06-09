@@ -8,10 +8,10 @@ export default async function Home() {
   
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
-      <div className="flex flex-col items-center justify-center gap-8 w-[40vw] p-8">
+      <div className="flex flex-col items-center justify-center gap-8 w-[80vw] md:w-[40vw] p-8">
         {
           session ?
-            <p>Hi {session?.user?.name}, please enter your openAI api key</p>
+            <p>Hi {session?.user?.name}, please enter your Google genAI api key</p>
           :
           <GoogleSignInButton>Login with Google</GoogleSignInButton>
         }

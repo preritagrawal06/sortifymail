@@ -74,7 +74,7 @@ const EmailSection = () => {
     const handleClick = async () => {
         try {
             setClassifierLoading(true)
-            const { data } = await axios.post(`https://sortifymail-backend.onrender.com/api/agent/classifyemail`, { emails: emails })
+            const { data } = await axios.post(`https://sortifymail-backend.onrender.com/api/agent/classifyemail`, { emails: emails, apikey : localStorage.getItem('oaikey') })
             // console.log(data.data)
             setClassification(data.data)
             setClassifierLoading(false)
@@ -82,7 +82,7 @@ const EmailSection = () => {
             console.log((error as Error).message);
             toast({
                 title:"Something went wrong",
-                description: "Plese try again!"
+                description: "Please check your API key and try again!"
             })
         } finally {
             setClassifierLoading(false)
