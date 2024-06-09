@@ -50,7 +50,6 @@ const EmailSection = () => {
                 setLoading(true)
                 if (emails.length === 0 || emails.length != batch) {
                     setClassification(null)
-                    console.log(process.env);
                     
                     const { data } = await axios.post(`/api/gmail/messages`, {
                         batch: batch

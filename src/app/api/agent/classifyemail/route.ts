@@ -6,7 +6,9 @@ import {HumanMessage} from "@langchain/core/messages"
 const model = new ChatGoogleGenerativeAI({
     model: "gemini-1.5-pro",
     maxOutputTokens: 2048,
-    temperature: 0
+    temperature: 0,
+    apiKey: process.env.GOOGLE_API_KEY,
+    
 })
 
 
